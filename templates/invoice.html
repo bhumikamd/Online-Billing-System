@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="title">Online Billing System</div>
+
+<div class="container" style="width:70%;">
+
+    <h2>Invoice #{{ invoice.invoice_id }}</h2>
+
+    <p><strong>Customer:</strong> {{ invoice.customer_name }}</p>
+    <p><strong>Date:</strong> {{ invoice.created_at }}</p>
+
+    <hr>
+
+    <h3>Items</h3>
+
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>₹{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>₹{{ item.price * item.quantity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3 style="text-align:right;">
+        Grand Total: ₹{{ invoice.total_amount }}
+    </h3>
+
+   <div style="display:flex; gap:10px; justify-content:flex-end;">
+
+    <button onclick="window.print()" style="width:auto; padding:10px 20px;">
+        Print Invoice
+    </button>
+
+    <a href="/dashboard">
+        <button style="width:auto; padding:10px 20px;">
+            Back to Dashboard
+        </button>
+    </a>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
