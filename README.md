@@ -21,17 +21,17 @@ A billing management system built using Flask and MySQL to manage products, gene
 ## 📸 Screenshots
 
 ### Login Page
-![Login](screenshots/login.png)
+![Login](screenshots/login page.png)
 
 ### Dashboard
 ![Dashboard](screenshots/dashboard1.png)
 
 ### Invoice Page
-![Invoice](screenshots/invoice.png)
+![Invoice](screenshots/invoicesample.png)
 
 ### All Invoices
 ![Invoices](screenshots/invoices.png)
 
 ## 👩‍💻 Author
 
-Bhumi
+Bhumika
